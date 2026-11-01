@@ -32,7 +32,7 @@ a{color:inherit}
 .hero .who b{font-family:var(--f-display);font-size:19px;letter-spacing:.04em}
 .bio{margin:8px 0 0;font-size:13px;opacity:.85;line-height:1.7}
 .cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:#F6F1E6;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px}
-.cta i{font-style:normal;font-family:var(--f-en);font-size:18px;line-height:1}
+.cta svg{width:16px;height:16px;flex:none;transition:transform .2s}.cta:hover svg{transform:translateX(3px)}
 /* strip */
 .strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--olive);color:#EEF0E3}
 @media(min-width:640px){.strip{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -55,17 +55,21 @@ section{padding-top:36px}
 /* who */
 .aud{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
 @media(min-width:640px){.aud{grid-template-columns:.9fr 1.4fr}}
-.big{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:1;color:var(--olive)}
+.big{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:1;color:var(--brown)}
 .big small{font-size:18px}
-.big.y{color:var(--brown);font-size:44px}
+.big.y{color:var(--olive2);font-size:44px}
 .segs{display:flex;gap:26px;align-items:flex-end}
 .sl{margin:6px 0 0;font-size:13px;color:var(--muted)}
 .bars{display:flex;flex-direction:column;gap:8px}
 .bar{display:grid;grid-template-columns:70px minmax(0,1fr) 48px;gap:10px;align-items:center;font-size:13px}
 .bar em{font-style:normal;color:var(--muted);white-space:nowrap}
 .bar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
-.bar .t i{display:block;height:100%;background:var(--olive2);border-radius:5px}
+.bar .t i{display:block;height:100%;background:#B9B5A8;border-radius:5px}
 .bar .t i.hi{background:var(--brown)}
+.bar .t i.y{background:var(--olive2)}
+.bar b.hi{color:var(--brown);font-weight:700}
+.bar b.y{color:var(--olive2);font-weight:700}
+.bar b{color:var(--muted)}
 .bar b{font-family:var(--f-mono);font-weight:500;text-align:right;font-size:12px}
 /* why */
 .why{display:grid;grid-template-columns:1fr;gap:12px}
@@ -114,6 +118,8 @@ td a{text-decoration:none;border-bottom:1px solid var(--line)}
 .case .cb em{font-style:normal;font-size:11px;opacity:.7;margin-left:6px}
 .case .ct{display:block;font-weight:700;font-size:14px;margin-top:4px;text-decoration:none;color:#F6F1E6}
 .case p{margin:4px 0 0;font-size:12px;opacity:.85;line-height:1.7}
+tr.sep td{font-size:11px;font-weight:700;color:var(--muted);padding-top:16px;letter-spacing:.04em}
+tr.old td{opacity:.72}
 .tl{font-size:12px;color:var(--muted);font-weight:700;margin:0 0 4px}
 .promise{margin-top:14px;background:var(--olive-soft);padding:12px 14px;font-size:13px;border-radius:2px}
 .photos{display:flex;gap:6px;align-items:flex-start}
@@ -137,7 +143,7 @@ td a{text-decoration:none;border-bottom:1px solid var(--line)}
 <p class="foot" id="foot"></p>
 
 <!--KIT-DATA-START-->
-<script type="application/json" id="kit-data">{"updated":"2026-11-01","subs":878,"totalViews":289179,"videos":72,"month":"2026-10","monthLong":26575,"avgViews":4509,"medViews":2580,"avgN":15,"avgSince":"2026-04-11","audience":{"period":"2026年8〜10月","male":99.7,"ages":[["18〜24歳",1.9],["25〜34歳",13.4],["35〜44歳",14.5],["45〜54歳",31.1],["55〜64歳",32.8],["65歳〜",6.5]]},"reviews":[{"cat":"装備","title":"TT&CO トゥーカッター（ヘルメット）1年レビュー","id":"afT4R7_UEqA","views":4717,"comments":17,"date":"2026-10-24"},{"cat":"長期レビュー","title":"R nineT Scrambler 半年レビュー","id":"KFkw1gNCpBE","views":10880,"comments":35,"date":"2026-10-17"},{"cat":"装備","title":"GRエクスプロア（スマホホルダー）レビュー","id":"t1mjI6HBQSY","views":949,"comments":null,"date":"2026-10-03"},{"cat":"維持費・実測","title":"R nineT 消耗品交換費用と油温","id":"cWQr-VbBq2I","views":13091,"comments":62,"date":"2026-07-11"},{"cat":"長期レビュー","title":"GB350 2年半レビュー","id":"d2NeEP2gJLY","views":9670,"comments":12,"date":"2026-03-21"},{"cat":"DIY取付","title":"GB350 スプロケット交換","id":"uy-Uwjk5mlc","views":34994,"comments":19,"date":"2024-04-29"},{"cat":"DIY取付","title":"GB350 セパハン交換（カフェレーサーカスタム）","id":"o2md4Mi83D4","views":32810,"comments":44,"date":"2024-01-07"}],"instagram":{"handle":"yutaro_motoblog","followers":null},"contact":"motoblog.yutaro@gmail.com","photos":[{"src":"img/g7.jpg","w":1100,"h":688},{"src":"img/g4.jpg","w":1100,"h":1654},{"src":"img/g1.jpg","w":1100,"h":550},{"src":"img/g2.jpg","w":1100,"h":619},{"src":"img/g8.jpg","w":1100,"h":688},{"src":"img/g3.jpg","w":1100,"h":733},{"src":"img/g5.jpg","w":1100,"h":688},{"src":"img/g9.jpg","w":1100,"h":1650},{"src":"img/g6.jpg","w":1100,"h":688}],"x":{"handle":"yutaroMotoBlog","followers":333},"voices":[{"text":"元GB350乗りの方視点でのレビューはめちゃくちゃ参考になります！","from":"R nineT 半年レビュー ／ 購入を検討中の視聴者"},{"text":"実情がわかってとても良かったです。お金貯めてしっかりと計画します","from":"消耗品交換費用と油温 ／ 購入を検討中の視聴者"},{"text":"めちゃくちゃカッコいい！…この木々が似合いますなぁ","from":"R nineT 半年レビュー ／ 視聴者"},{"text":"編集とかキレイだし気に入ってもらえると思う","from":"R nineT 半年レビュー ／ 視聴者"}],"growth":{"period":"2026年8〜10月","net":188,"prevNet":89},"cases":[{"kind":"long","label":"長く見られる","id":"uy-Uwjk5mlc","title":"GB350 スプロケット交換（2024年4月公開）","views":34994,"recent28":1286,"note":"公開から2年以上たった今も見られ続けています。紹介した商品が、何年も目に触れ続けます。"},{"kind":"talk","label":"会話が生まれる","id":"cWQr-VbBq2I","title":"R nineT 消耗品交換費用と油温（2026年7月公開）","views":13091,"comments":62,"note":"コメント欄で、オーナー同士が費用や対策を教え合う場になりました。"},{"kind":"fast","label":"新作の初速","id":"KFkw1gNCpBE","title":"R nineT Scrambler 半年レビュー（2026年10月公開）","views":10708,"span":"公開2週間","note":"公開から2週間で1万回を超え、登録者も31人増えました。"}]}</script>
+<script type="application/json" id="kit-data">{"updated":"2026-11-01","subs":878,"totalViews":289179,"videos":72,"month":"2026-10","monthLong":26575,"avgViews":4509,"medViews":2580,"avgN":15,"avgSince":"2026-04-11","audience":{"period":"2026年8〜10月","male":99.7,"ages":[["18〜24歳",1.9],["25〜34歳",13.4],["35〜44歳",14.5],["45〜54歳",31.1],["55〜64歳",32.8],["65歳〜",6.5]]},"reviews":[{"cat":"装備","title":"TT&CO トゥーカッター（ヘルメット）1年レビュー","id":"afT4R7_UEqA","views":4717,"comments":17,"date":"2026-10-24"},{"cat":"長期レビュー","title":"R nineT Scrambler 半年レビュー","id":"KFkw1gNCpBE","views":10880,"comments":35,"date":"2026-10-17"},{"cat":"装備","title":"GRエクスプロア（スマホホルダー）レビュー","id":"t1mjI6HBQSY","views":949,"comments":null,"date":"2026-10-03"},{"cat":"維持費・実測","title":"R nineT 消耗品交換費用と油温","id":"cWQr-VbBq2I","views":13091,"comments":62,"date":"2026-07-11"},{"cat":"長期レビュー","title":"GB350 2年半レビュー","id":"d2NeEP2gJLY","views":9670,"comments":12,"date":"2026-03-21"},{"cat":"DIY取付","title":"GB350 スプロケット交換","id":"uy-Uwjk5mlc","views":34994,"comments":19,"date":"2024-04-29"},{"cat":"DIY取付","title":"GB350 セパハン交換（カフェレーサーカスタム）","id":"o2md4Mi83D4","views":32810,"comments":44,"date":"2024-01-07"},{"cat":"DIY取付","title":"R nineT バーエンドミラー取り付け（デイトナ／ハイサイダー）","id":"fAIjmcr54is","views":2259,"comments":6,"date":"2026-04-18"}],"instagram":{"handle":"yutaro_motoblog","followers":null},"contact":"motoblog.yutaro@gmail.com","photos":[{"src":"img/g7.jpg","w":1100,"h":688},{"src":"img/g4.jpg","w":1100,"h":1654},{"src":"img/g1.jpg","w":1100,"h":550},{"src":"img/g2.jpg","w":1100,"h":619},{"src":"img/g8.jpg","w":1100,"h":688},{"src":"img/g3.jpg","w":1100,"h":733},{"src":"img/g5.jpg","w":1100,"h":688},{"src":"img/g9.jpg","w":1100,"h":1650},{"src":"img/g6.jpg","w":1100,"h":688}],"x":{"handle":"yutaroMotoBlog","followers":333},"voices":[{"text":"元GB350乗りの方視点でのレビューはめちゃくちゃ参考になります！","from":"R nineT 半年レビュー ／ 購入を検討中の視聴者"},{"text":"実情がわかってとても良かったです。お金貯めてしっかりと計画します","from":"消耗品交換費用と油温 ／ 購入を検討中の視聴者"},{"text":"めちゃくちゃカッコいい！…この木々が似合いますなぁ","from":"R nineT 半年レビュー ／ 視聴者"},{"text":"編集とかキレイだし気に入ってもらえると思う","from":"R nineT 半年レビュー ／ 視聴者"}],"growth":{"period":"2026年8〜10月","net":188,"prevNet":89},"cases":[{"kind":"fast","label":"新作の初速","id":"KFkw1gNCpBE","title":"R nineT Scrambler 半年レビュー（2026年10月公開）","views":10708,"span":"公開2週間","note":"公開から2週間で1万回を超え、登録者も31人増えました。"},{"kind":"talk","label":"会話が生まれる","id":"cWQr-VbBq2I","title":"R nineT 消耗品交換費用と油温（2026年7月公開）","views":13091,"comments":62,"note":"コメント欄で、オーナー同士が費用や対策を教え合う場になりました。"},{"kind":"long","label":"長く見られる","id":"kSpsqRne-Qk","title":"R nineT Scrambler 納車（2026年4月公開）","views":8183,"recent28":851,"note":"公開から半年たった今も見られ続け、8,000回を超えています。"}]}</script>
 <!--KIT-DATA-END-->
 
 <script>
@@ -160,8 +166,8 @@ h+='<header class="hero"><img src="img/hero.jpg" alt="BMW R nineT Scrambler と�
 h+='<div class="mk">Media Kit — YouTube Motovlog</div>';
 h+='<h1><span>装備を自分で選ぶ</span><span>大人のライダーに、</span><br><span>“使い込んだ本音”で</span><span>届けます。</span></h1>';
 h+='<div class="who"><b>ゆう太郎【motoblog】</b><span>BMW R nineT Scrambler ／ FUJIFILM X-T5 ／ 埼玉</span></div>';
-h+='<p class="bio">30代・会社員。GB350に2年半乗り、2026年からR nineT Scrambler。休日は関東・甲信を走り、写真を撮っています。</p>';
-h+='<a class="cta" href="#contact">お仕事のご相談はこちら <i>→</i></a>';
+h+='<p class="bio">30代・会社員。GB350に2年半乗り、2026年からR nineT Scrambler。休日は近場から遠方までツーリングに出かけ、写真を撮っています。</p>';
+h+='<a class="cta" href="#contact">お仕事のご相談はこちら<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>';
 h+='</div></header>';
 /* strip */
 h+='<div class="strip">';
@@ -177,30 +183,24 @@ h+='<div class="body">';
 h+='<section><div class="sh"><span class="no">01 — Audience</span><h2>装備にお金をかける、45〜64歳の男性が中心</h2><small>'+esc(a.period||"")+'・YouTube アナリティクス</small></div>';
 h+='<p class="lead">中心は<b>45〜64歳</b>、さらに<b>25〜44歳の同世代</b>も約3割。良い装備に納得してお金を払う、大人のライダーです。</p>';
 h+='<div class="aud"><div><div class="segs"><div><div class="big">'+core+'<small>%</small></div><p class="sl">45〜64歳</p></div><div><div class="big y">'+young+'<small>%</small></div><p class="sl">25〜44歳</p></div></div></div>';
-h+='<div class="bars">'+ages.map(function(x){var hi=x[1]>=25;return '<div class="bar"><em>'+esc(x[0])+'</em><div class="t"><i class="'+(hi?"hi":"")+'" style="width:'+(x[1]/maxA*100).toFixed(1)+'%"></i></div><b>'+x[1]+'%</b></div>'}).join("")+'</div></div></section>';
-/* 02 why */
-h+='<section><div class="sh"><span class="no">02 — Why me</span><h2>選ばれる理由は「本音・写真・会話」の3つ</h2></div><div class="why">';
-h+='<div class="wc"><div class="k">Honest</div><h3>使い込んでから話す</h3><p>半年・1年使ってから、良い点も気になる点も正直に。購入を考えている人が「参考になった」と残してくれるレビューです。</p></div>';
-h+='<div class="wc"><div class="k">Photograph</div><h3>写真で魅せる</h3><p>FUJIFILM X-T5と単焦点レンズで撮影。動画の最後に毎回写真を公開しています。商品を「着た姿・使う姿」で美しく残せます。</p></div>';
-h+='<div class="wc"><div class="k">Community</div><h3>コメントが濃い</h3><p>'+(avgC?'レビュー動画には1本平均<b>'+avgC+'件</b>のコメント。':'')+'車種オーナーからの長い体験談が集まり、一つずつ返信しています。紹介した商品について、見ている人と会話が続きます。</p></div>';
-h+='</div><div class="honest"><b>正直にお伝えすること</b><p>登録者はまだ1,000人に届いていない、小さなチャンネルです。その代わり、1本ずつ時間をかけて作り、検索から長く見られる動画にしています。2024年に公開した取り付け動画は、今も見られ続けて3.5万回を超えています。</p></div></section>';
+h+='<div class="bars">'+ages.map(function(x){var g=/^(45|55)/.test(x[0])?"hi":/^(25|35)/.test(x[0])?"y":"";return '<div class="bar"><em>'+esc(x[0])+'</em><div class="t"><i class="'+g+'" style="width:'+(x[1]/maxA*100).toFixed(1)+'%"></i></div><b class="'+g+'">'+x[1]+'%</b></div>'}).join("")+'</div></div></section>';
 /* gallery */
-if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">03 — Gallery</span><h2>商品を「着た姿・使う姿」で美しく残せます</h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div></section>'}
+if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">02 — Gallery</span><h2>バイクと装備が映える写真を、撮ってお渡しできます</h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div></section>'}
 /* 03 voices */
-if(D.voices&&D.voices.length){h+='<section><div class="sh"><span class="no">04 — Voices</span><h2>購入を考えている人に届いています</h2><small>YouTubeのコメントより</small></div><div class="voices">'+D.voices.map(function(v){return '<blockquote class="vc"><p>「'+esc(v.text)+'」</p><cite>'+esc(v.from)+'</cite></blockquote>'}).join("")+'</div></section>'}
+if(D.voices&&D.voices.length){h+='<section><div class="sh"><span class="no">03 — Voices</span><h2>購入を考えている人に届いています</h2><small>YouTubeのコメントより</small></div><div class="voices">'+D.voices.map(function(v){return '<blockquote class="vc"><p>「'+esc(v.text)+'」</p><cite>'+esc(v.from)+'</cite></blockquote>'}).join("")+'</div></section>'}
 /* 04 works */
-h+='<section><div class="sh"><span class="no">05 — Works</span><h2>取り付けと長期レビューが、長く見られています</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
-(D.reviews||[]).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))}).forEach(function(r){h+='<tr><td class="d">'+(r.date?r.date.slice(0,7).replace("-","/"):"")+'</td><td><span class="cat">'+esc(r.cat)+'</span><a href="https://youtu.be/'+esc(r.id)+'">'+esc(r.title)+'</a></td><td class="r">'+n(r.views)+'</td><td class="r">'+(r.comments==null?"–":n(r.comments))+'</td></tr>'});
-h+='</tbody></table></section>';
+h+='<section><div class="sh"><span class="no">04 — Works</span><h2>R nineTのレビューは、公開2週間で1万回見られました</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
+var rv=(D.reviews||[]).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))}),isOld=function(r){return /GB350/.test(r.title)},rows=rv.filter(function(r){return !isOld(r)}).concat(rv.filter(isOld));var sep=false;rows.forEach(function(r){if(isOld(r)&&!sep){sep=true;h+='<tr class="sep"><td colspan="4">前の愛車 GB350 の動画</td></tr>'}h+='<tr'+(isOld(r)?' class="old"':'')+'><td class="d">'+(r.date?r.date.slice(0,7).replace("-","/"):"")+'</td><td><span class="cat">'+esc(r.cat)+'</span><a href="https://youtu.be/'+esc(r.id)+'">'+esc(r.title)+'</a></td><td class="r">'+n(r.views)+'</td><td class="r">'+(r.comments==null?"–":n(r.comments))+'</td></tr>'});
+h+='</tbody></table><div class="honest"><b>正直にお伝えすること</b><p>登録者はまだ1,000人に届いていない、小さなチャンネルです。その代わり1本ずつ時間をかけて作り、長く見られる動画にしています。前の愛車GB350の取り付け動画は、公開から2年以上たった今も見られ続け、3.5万回を超えています。</p></div></section>';
 /* 05 menu */
-h+='<section><div class="sh"><span class="no">06 — Menu</span><h2>動画・写真・SNSでご紹介できます</h2></div><div class="menu">';
+h+='<section><div class="sh"><span class="no">05 — Menu</span><h2>動画・写真・SNSでご紹介できます</h2></div><div class="menu">';
 h+='<div class="mi"><span class="n">i</span><div><b>長期使用レビュー動画</b><span>数か月しっかり使ってから、良い点・気になる点を正直にお伝えします</span></div></div>';
 h+='<div class="mi"><span class="n">ii</span><div><b>取り付け・使い方の動画</b><span>DIYでの取り付けを、工具・手順・かかった時間まで丁寧に</span></div></div>';
 h+='<div class="mi"><span class="n">iii</span><div><b>着用・使用写真の撮影</b><span>R nineTと合わせた、クラシックな雰囲気の写真をお渡しできます</span></div></div>';
 h+='<div class="mi"><span class="n">iv</span><div><b>X・Instagramでの写真投稿</b><span>撮影した写真と一緒に、SNSでもご紹介します'+(xx.followers?'（Xフォロワー '+n(xx.followers)+'人）':'')+'</span></div></div>';
 h+='</div></section>';
 /* 06 flow */
-h+='<section><div class="sh"><span class="no">07 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
+h+='<section><div class="sh"><span class="no">06 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
 h+='<div class="fl"><span class="s">Step 1</span><b>メールでご相談</b><span>商品と、公開したい時期をお知らせください</span></div>';
 h+='<div class="fl"><span class="s">Step 2</span><b>実際に使う</b><span>ツーリングや普段使いで、じっくり試します</span></div>';
 h+='<div class="fl"><span class="s">Step 3</span><b>動画・写真を公開</b><span>「PR」を表示して公開します</span></div>';
