@@ -48,6 +48,7 @@ section{padding-top:36px}
 .sh h2{font-family:var(--f-display);font-weight:800;font-size:20px;margin:0;line-height:1.4}
 .sh small{margin-left:auto;font-size:11px;color:var(--muted);text-align:right}
 .sh{flex-wrap:wrap}
+.nb{display:inline-block}
 @media(max-width:639px){.sh small{margin-left:0;width:100%;text-align:left}.sh small br{display:none}.sh h2{font-size:19px}td.d{font-size:11px}th,td{padding:9px 4px}}
 .lead{font-family:var(--f-display);font-weight:600;font-size:17px;line-height:1.7;margin:0 0 14px}
 .lead b{color:var(--brown)}
@@ -177,22 +178,22 @@ h+='<div class="strip">';
 h+='<div><span>YOUTUBE 登録者</span><b>'+n(D.subs)+'<small>人</small></b></div>';
 h+='<div><span>1本の平均再生</span><b>'+man(D.avgViews)+'<small>回</small></b><em>横動画・'+(D.avgSince?ymd(D.avgSince).replace(/\d+日$/,""):"")+'以降</em></div>';
 var gr=D.growth||{};
-if(gr.net!=null)h+='<div class="up"><span>直近3か月の登録者</span><b>+'+n(gr.net)+'<small>人</small></b><em>'+(gr.prevNet>0&&gr.net/gr.prevNet>=1.1?'前の3か月の'+(Math.round(gr.net/gr.prevNet*10)/10)+'倍に伸びています':(gr.prevNet!=null?'前の3か月は+'+n(gr.prevNet)+'人':esc(gr.period||"")))+'</em></div>';
+if(gr.net!=null)h+='<div class="up"><span>直近3か月の登録者</span><b>+'+n(gr.net)+'<small>人</small></b><em>'+(gr.prevNet>0&&gr.net/gr.prevNet>=1.1?'前の3か月の'+(Math.round(gr.net/gr.prevNet*10)/10)+'倍':(gr.prevNet!=null?'前の3か月は+'+n(gr.prevNet)+'人':esc(gr.period||"")))+'</em></div>';
 else h+='<div><span>'+(D.month?(+D.month.slice(5))+'月の再生':'月間再生')+'</span><b>'+man(D.monthLong)+'<small>回</small></b><em>横動画</em></div>';
 h+='<div><span>男性の視聴者</span><b>'+(a.male!=null?a.male:"–")+'<small>%</small></b><em>'+esc(a.period||"")+'</em></div>';
 h+='</div>';
 h+='<div class="body">';
 /* 01 who */
-h+='<section><div class="sh"><span class="no">01 — Audience</span><h2>45〜64歳を中心に、大人の男性ライダーが見ています</h2><small>'+esc(a.period||"")+'・YouTube アナリティクス</small></div>';
+h+='<section><div class="sh"><span class="no">01 — Audience</span><h2><span class="nb">45〜64歳を中心に、</span><span class="nb">大人の男性ライダーが</span><span class="nb">見ています</span></h2><small>'+esc(a.period||"")+'・YouTube アナリティクス</small></div>';
 h+='<p class="lead">中心は<b>45〜64歳</b>、さらに<b>25〜44歳の同世代</b>も約3割。視聴者のほぼ全員が男性です。</p>';
 h+='<div class="aud"><div><div class="segs"><div><div class="big">'+core+'<small>%</small></div><p class="sl">45〜64歳</p></div><div><div class="big y">'+young+'<small>%</small></div><p class="sl">25〜44歳</p></div></div></div>';
 h+='<div class="bars">'+ages.map(function(x){var g=/^(45|55)/.test(x[0])?"hi":/^(25|35)/.test(x[0])?"y":"";return '<div class="bar"><em>'+esc(x[0])+'</em><div class="t"><i class="'+g+'" style="width:'+(x[1]/maxA*100).toFixed(1)+'%"></i></div><b class="'+g+'">'+x[1]+'%</b></div>'}).join("")+'</div></div></section>';
 /* 04 works */
-h+='<section><div class="sh"><span class="no">02 — Works</span><h2>R nineTのレビューは、公開2週間で1万回見られました</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
+h+='<section><div class="sh"><span class="no">02 — Works</span><h2><span class="nb">R nineTのレビューは、</span><span class="nb">公開2週間で</span><span class="nb">1万回見られました</span></h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
 var rv=(D.reviews||[]).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))}),isOld=function(r){return /GB350/.test(r.title)},rows=rv.filter(function(r){return !isOld(r)}).concat(rv.filter(isOld));var sep=false;rows.forEach(function(r){if(isOld(r)&&!sep){sep=true;h+='<tr class="sep"><td colspan="4">前の愛車 GB350 の動画</td></tr>'}h+='<tr'+(isOld(r)?' class="old"':'')+'><td class="d">'+(r.date?r.date.slice(0,7).replace("-","/"):"")+'</td><td><span class="cat">'+esc(r.cat)+'</span><a href="https://youtu.be/'+esc(r.id)+'">'+esc(r.title)+'</a></td><td class="r">'+n(r.views)+'</td><td class="r">'+(r.comments==null?"–":n(r.comments))+'</td></tr>'});
 h+='</tbody></table><div class="honest"><b>正直にお伝えすること</b><p>登録者はまだ1,000人に届いていない、小さなチャンネルです。その代わり1本ずつ時間をかけて作り、長く見られる動画にしています。前の愛車GB350の取り付け動画は、公開から2年以上たった今も見られ続け、3.5万回を超えています。</p></div></section>';
 /* gallery */
-if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">03 — Gallery</span><h2>バイクと装備が映える写真を、撮ってお渡しできます</h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div></section>'}
+if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">03 — Gallery</span><h2><span class="nb">バイクと装備が映える写真を、</span><span class="nb">撮ってお渡しできます</span></h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div></section>'}
 /* 03 voices */
 if(D.voices&&D.voices.length){h+='<section><div class="sh"><span class="no">04 — Voices</span><h2>購入を考えている人に届いています</h2><small>YouTubeのコメントより</small></div><div class="voices">'+D.voices.map(function(v){return '<blockquote class="vc"><p>「'+esc(v.text)+'」</p><cite>'+esc(v.from)+'</cite></blockquote>'}).join("")+'</div></section>'}
 /* 05 menu */
@@ -203,8 +204,8 @@ h+='<div class="mi"><span class="n">iii</span><div><b>着用・使用写真の�
 h+='<div class="mi"><span class="n">iv</span><div><b>X・Instagramでの写真投稿</b><span>撮影した写真と一緒に、SNSでもご紹介します</span></div></div>';
 h+='</div><div class="terms"><b>ご依頼の条件</b><ul><li>商品のご提供のみでも、お気軽にご相談ください。</li><li>使用期間と公開時期は、商品に合わせてご相談のうえ決めさせていただきます。</li><li>撮影した写真は、貴社のWebサイトやSNSでもお使いいただけます。</li><li>公開前に動画をお送りしますので、商品名や仕様など事実関係のご確認をお願いいたします。感想は使ってみたうえでの率直な内容でお伝えします。</li><li>有償でのご依頼の場合、費用はご依頼内容をうかがったうえで、ご相談して決めさせていただきます。</li></ul></div><p class="mid"><a class="cta2" href="#contact">お仕事のご相談はこちら</a></p></section>';
 /* 06 flow */
-h+='<section><div class="sh"><span class="no">06 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
-h+='<div class="fl"><span class="s">Step 1</span><b>メールでご相談</b><span>商品と、公開したい時期をお知らせください</span></div>';
+h+='<section><div class="sh"><span class="no">06 — Flow</span><h2><span class="nb">4ステップで、</span><span class="nb">公開後の反応まで</span><span class="nb">お伝えします</span></h2></div><div class="flow">';
+h+='<div class="fl"><span class="s">Step 1</span><b>メールでご相談</b><span>商品と、ご希望の公開時期をお知らせください</span></div>';
 h+='<div class="fl"><span class="s">Step 2</span><b>実際に使う</b><span>ツーリングや普段使いで、じっくり試します</span></div>';
 h+='<div class="fl"><span class="s">Step 3</span><b>動画・写真を公開</b><span>事実関係をご確認いただいたうえで、「PR」を表示して公開します</span></div>';
 h+='<div class="fl"><span class="s">Step 4</span><b>結果のご報告</b><span>再生数・コメントなど、公開後の反応をお伝えします</span></div>';
