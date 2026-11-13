@@ -251,19 +251,15 @@ h+='<div class="wc"><div class="k">Community</div><h3>コメントが濃い</h3>
 h+='</div><div class="honest"><b>'+(D.subs<1000?'正直にお伝えすること':'長く見られる動画づくり')+'</b><p>'+(D.subs<1000?'登録者はまだ1,000人に届いていない、小さなチャンネルです。その代わり、':'')+'1本ずつ時間をかけて作り、検索から長く見られる動画にしています。'+(longV?'2024年に公開した取り付け動画は、今も見られ続けて'+(Math.floor(longV/1000)/10)+'万回を超えています。':'')+'</p></div></section>';
 /* gallery */
 if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">03 — Gallery</span><h2>商品を「着た姿・使う姿」で美しく残せます</h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div><p class="more" id="morep" hidden><button type="button" class="moreb" id="moreb"></button></p></section>'}
-/* 04 works */
-h+='<section><div class="sh"><span class="no">04 — Works</span><h2>長く見られ、会話が生まれ、新作も伸びています</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
-(D.reviews||[]).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))}).forEach(function(r){h+='<tr><td class="d">'+(r.date?r.date.slice(0,7).replace("-","/"):"")+'</td><td><span class="cat">'+esc(r.cat)+'</span><a href="https://youtu.be/'+esc(r.id)+'">'+esc(r.title)+'</a></td><td class="r">'+n(r.views)+'</td><td class="r">'+(r.comments==null?"–":n(r.comments))+'</td></tr>'});
-h+='</tbody></table></section>';
-/* 05 menu */
-h+='<section><div class="sh"><span class="no">05 — Menu</span><h2>動画・写真・SNSでご紹介できます</h2></div><div class="menu">';
+/* 04 menu */
+h+='<section><div class="sh"><span class="no">04 — Menu</span><h2>動画・写真・SNSでご紹介できます</h2></div><div class="menu">';
 h+='<div class="mi"><span class="n">i</span><div><b>長期使用レビュー動画</b><span>数か月しっかり使ってから、良い点・気になる点を正直にお伝えします</span></div></div>';
 h+='<div class="mi"><span class="n">ii</span><div><b>取り付け・使い方の動画</b><span>DIYでの取り付けを、工具・手順・かかった時間まで丁寧に</span></div></div>';
 h+='<div class="mi"><span class="n">iii</span><div><b>着用・使用写真の撮影</b><span>R nineTと合わせた、クラシックな雰囲気の写真をお渡しすることもできます</span></div></div>';
 h+='<div class="mi"><span class="n">iv</span><div><b>X・Instagramでの写真投稿</b><span>撮影した写真と一緒に、SNSでもご紹介します</span></div></div>';
 h+='</div></section>';
 /* 06 flow */
-h+='<section><div class="sh"><span class="no">06 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
+h+='<section><div class="sh"><span class="no">05 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
 h+='<div class="fl"><span class="s">Step 1</span><b>メールでご相談</b><span>商品と、公開したい時期をお知らせください</span></div>';
 h+='<div class="fl"><span class="s">Step 2</span><b>実際に使う</b><span>ツーリングや普段使いで、じっくり試します</span></div>';
 h+='<div class="fl"><span class="s">Step 3</span><b>動画・写真を公開</b><span>事実関係をご確認いただいてから、「PR」を表示して公開します</span></div>';
