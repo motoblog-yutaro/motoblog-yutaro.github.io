@@ -181,7 +181,9 @@ td .cat{border-radius:999px;padding:0 8px;background:linear-gradient(#fff,rgba(2
 .cbox .crow:first-child{border-top:0}
 .crow{padding:11px 0}
 .copy{border:0;padding:3px 13px;background:linear-gradient(rgba(255,255,255,.22),rgba(255,255,255,.08));box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 0 0 1px rgba(255,255,255,.14),0 6px 12px -6px #000}
+.copy{line-height:1.5;align-self:center}
 .copy:active{transform:translateY(1px)}
+@media(max-width:639px){.crow{gap:1px 10px}.crow span{min-width:100%}.crow b{font-size:14px}.crow .copy{margin-left:auto}}
 a:focus-visible,button:focus-visible{outline:2px solid var(--brown);outline-offset:3px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.wc,.mi,.vc,.case,.cta,.gbar a{transition:none}.wc:hover,.mi:hover,.case:hover,.cta:hover{transform:none}}
 </style>
@@ -241,17 +243,17 @@ h+='</div><div class="honest"><b>正直にお伝えすること</b><p>登録者�
 /* gallery */
 if(D.photos&&D.photos.length){h+='<section><div class="sh"><span class="no">03 — Gallery</span><h2>商品を「着た姿・使う姿」で美しく残せます</h2><small>作例・FUJIFILM X-T5 で撮影</small></div><div class="photos" id="photos"></div></section>'}
 /* 03 voices */
-if(D.voices&&D.voices.length){h+='<section><div class="sh"><span class="no">04 — Voices</span><h2>購入を考えている人に届いています</h2><small>YouTubeのコメントより</small></div><div class="voices">'+D.voices.map(function(v){return '<blockquote class="vc"><p>「'+esc(v.text)+'」</p><cite>'+esc(v.from)+'</cite></blockquote>'}).join("")+'</div></section>'}
+if(D.voices&&D.voices.length){h+='<section><div class="sh"><span class="no">04 — Voices</span><h2>購入を考えている人にも、届いています</h2><small>YouTubeのコメントより</small></div><div class="voices">'+D.voices.map(function(v){return '<blockquote class="vc"><p>「'+esc(v.text)+'」</p><cite>'+esc(v.from)+'</cite></blockquote>'}).join("")+'</div></section>'}
 /* 04 works */
-h+='<section><div class="sh"><span class="no">05 — Works</span><h2>取り付けと長期レビューが、長く見られています</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
+h+='<section><div class="sh"><span class="no">05 — Works</span><h2>長く見られ、会話が生まれ、新作も伸びています</h2><small>再生回数は'+ymd(D.updated)+'時点</small></div>'+casesHTML()+'<p class="tl">レビュー・紹介の動画（新しい順）</p><table><thead><tr><th>公開</th><th>動画</th><th class="r">再生</th><th class="r">コメント</th></tr></thead><tbody>';
 (D.reviews||[]).slice().sort(function(a,b){return String(b.date||"").localeCompare(String(a.date||""))}).forEach(function(r){h+='<tr><td class="d">'+(r.date?r.date.slice(0,7).replace("-","/"):"")+'</td><td><span class="cat">'+esc(r.cat)+'</span><a href="https://youtu.be/'+esc(r.id)+'">'+esc(r.title)+'</a></td><td class="r">'+n(r.views)+'</td><td class="r">'+(r.comments==null?"–":n(r.comments))+'</td></tr>'});
 h+='</tbody></table></section>';
 /* 05 menu */
 h+='<section><div class="sh"><span class="no">06 — Menu</span><h2>動画・写真・SNSでご紹介できます</h2></div><div class="menu">';
 h+='<div class="mi"><span class="n">i</span><div><b>長期使用レビュー動画</b><span>数か月しっかり使ってから、良い点・気になる点を正直にお伝えします</span></div></div>';
 h+='<div class="mi"><span class="n">ii</span><div><b>取り付け・使い方の動画</b><span>DIYでの取り付けを、工具・手順・かかった時間まで丁寧に</span></div></div>';
-h+='<div class="mi"><span class="n">iii</span><div><b>着用・使用写真の撮影</b><span>R nineTと合わせた、クラシックな雰囲気の写真をお渡しできます</span></div></div>';
-h+='<div class="mi"><span class="n">iv</span><div><b>X・Instagramでの写真投稿</b><span>撮影した写真と一緒に、SNSでもご紹介します'+(xx.followers?'（Xフォロワー '+n(xx.followers)+'人）':'')+'</span></div></div>';
+h+='<div class="mi"><span class="n">iii</span><div><b>着用・使用写真の撮影</b><span>R nineTと合わせた、クラシックな雰囲気の写真をお渡しすることもできます</span></div></div>';
+h+='<div class="mi"><span class="n">iv</span><div><b>X・Instagramでの写真投稿</b><span>撮影した写真と一緒に、SNSでもご紹介します</span></div></div>';
 h+='</div></section>';
 /* 06 flow */
 h+='<section><div class="sh"><span class="no">07 — Flow</span><h2>4ステップで、公開後の反応までお伝えします</h2></div><div class="flow">';
@@ -262,7 +264,7 @@ h+='<div class="fl"><span class="s">Step 4</span><b>結果のご報告</b><span>
 h+='</div><p class="promise">提供品・ご依頼の動画には、必ず「PR（プロモーションを含む）」を表示します。内容は正直なレビューとしてお伝えするので、見ている人の信頼を損ないません。</p></section>';
 h+='</div>';
 /* contact */
-h+='<footer class="contact" id="contact"><div class="mk">Contact</div><h2>まずは、お気軽にご相談ください</h2><p>商品のご提供・撮影・レビューのご依頼をお待ちしています。</p><div class="cbox">';
+h+='<footer class="contact" id="contact"><div class="mk">Contact</div><h2><span style="display:inline-block">まずは、</span><span style="display:inline-block">お気軽に</span><span style="display:inline-block">ご相談ください</span></h2><p>商品のご提供・撮影・レビューのご依頼をお待ちしています。</p><div class="cbox">';
 h+='<div class="crow"><span>メール</span><b>'+esc(D.contact||"")+'</b><button class="copy" id="cp" type="button">コピー</button></div>';
 h+='<div class="crow"><span>YouTube</span><a href="https://www.youtube.com/@motoblog-yutaro">@motoblog-yutaro</a></div>';
 if(xx.handle)h+='<div class="crow"><span>X</span><a href="https://x.com/'+esc(xx.handle)+'">@'+esc(xx.handle)+'</a>'+(xx.followers?'<em>フォロワー '+n(xx.followers)+'人</em>':'')+'</div>';
